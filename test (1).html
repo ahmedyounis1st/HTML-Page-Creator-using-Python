@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html >
+  <head >
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <script src="static/js/jquery-3.4.1.min.js" rel="stylesheet"> </script>
+  </head>
+  <style >
+    table, th, td { border-collapse: collapse; border-style: solid; }
+    th, td { padding: 5px; overflow-wrap: break-word; }
+    table.border td { border:1px solid black; }
+    button:hover    { opacity: 0.8; }
+    button:active   { background-color: #006400; box-shadow: 0 5px #666; transform: translateY(4px); }
+    .style-lf                 { text-align: left; }
+    .style-lf-fz150           { text-align: left;   font-size: 150%; }
+    .style-lf-fz120-lblue     { text-align: left;   font-size: 120%; background-color: #00AAE4; }
+    .style-lf-bo-fz120        { text-align: left;   font-weight: bold; font-size: 120%; }
+    .style-lf-bo              { text-align: left;   font-weight: bold; }
+    .style-lf-bo-bglblue      { text-align: left;   font-weight: bold; background-color: #00AAE4; color: #FFFFFF; }
+    .style-lf-bo-bgblack      { text-align: left;   font-weight: bold; background-color: #000000; color: #FFFFFF; }
+    .style-lf-bo-bgdkred      { text-align: left;   font-weight: bold; background-color: #900C3F; color: #FFFFFF; }
+    .style-lf-bo-bgpurple     { text-align: left;   font-weight: bold; background-color: #8A2BE2; color: #FFFFFF; }
+    .style-ct-bo-bgdkgreen    { text-align: center; font-weight: bold; background-color: #006400; color: #FFFFFF; }
+    .style-ct-bo-bglmgreen    { text-align: center; font-weight: bold; background-color: #32CD32; }
+    .style-button-fz125-time  { text-align: center; font-size: 125%; font-family:"Times New Roman"; padding-left: 10px; padding-right: 10px;}
+    .style-misc               { text-align: left; max-width: 30vw; vertical-align: text-top; }
+    .style-ct                 { text-align: center; }
+    .style-base-fz            { font-size: 1vw; }
+    .scale-base    { background-color: #FDFFF5; padding: 20px; font-size: 1vw; }
+    @media only screen and (max-width: 1000px) { .scale-base { font-size: 3vw; } .style-base-fz { font-size: 3vw; } }
+    .responsive    { width: auto; max-width: 100%; height: auto; }
+    .radio-valign [type="radio"] { vertical-align: middle; }
+    .vertical { text-align:center; transform: rotate(270deg); }
+    .wrapcell { width: 200px; word-wrap: break-word; }
+    .tblbody { background-image: url("static/images/ironman.jpeg"); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; }
+  </style>
+  <body >
+    <div id="tooplate_content" width="100%" class="scale-base">
+      <p >The is a sample output .... </p>
+      <form id="form-progressreport" name="form-progressreport" action="/progressreport" method="post">
+        <table border="4" class="tblbody">
+          <tr>
+            <td colspan="2" rowspan="1" >
+              <input type="number" class="style-lf-bo-bgdkred" name="0_0" value="0_0"/>
+            </td>
+            <td colspan="2" rowspan="1" >
+              <input type="number" class="style-lf-bo-bgdkred" name="0_1" value="0_1"/>
+            </td>
+            <td colspan="4" rowspan="1" >
+              <input type="number" class="style-lf-bo-bgdkred" name="0_2" value="0_2"/>
+            </td>
+            <td colspan="2" rowspan="1" >
+              <input type="number" class="style-lf-bo-bgdkred" name="0_3" value="0_3"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="8" rowspan="1" >
+              <select name="1_0">
+                <option disabled selected value="">pls choose one of the below</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </td>
+            <td colspan="2" rowspan="1" ><input type="checkbox" name="1_3" value="1_3" checked/> 1_3_check</td>
+          </tr>
+          <tr>
+            <td colspan="4" rowspan="2" ><input type="checkbox" name="2_0" value="2_0" /> 2_0_uncheck</td>
+            <td colspan="4" rowspan="1" >
+              <input type="date" name="2_2" value=""/>
+            </td>
+            <td colspan="2" rowspan="1" >
+              <input type="text" name="2_3" value="2_3" required/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="6" rowspan="1" >
+              <textarea rows="3" cols="4" maxlength="20" name="3_2">3_2</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" rowspan="1" ><input type="radio" class="lf_color" name="4_radio_2" value="4_0" /> 4_0_uncheck</td>
+            <td colspan="2" rowspan="1" ><input type="radio" class="lf_color" name="4_radio_2" value="4_1" checked/> 4_1_check</td>
+            <td colspan="4" rowspan="1" ><input type="radio" class="lf_color" name="4_radio_4" value="4_2" /> 4_2_uncheck</td>
+            <td colspan="2" rowspan="1" ><input type="radio" class="lf_color" name="4_radio_4" value="4_3" /> 4_3_uncheck</td>
+          </tr>
+          <tr>
+            <td colspan="2" rowspan="1" ></td>
+            <td colspan="6" rowspan="1" >this is a very long string ..... what the hack .....</td>
+          </tr>
+          <tr></tr>
+        </table>
+        <button type="submit" class="style-lf-bo-bgdkred style-base-fz" name="submit-progressreport" id="submit-progressreport" value="1">Submit</button>
+        <p ><br>
+This is normal text - <span style="font-weight:bold;">and this is bold text</span></p>
+        <p >story is .... </p>
+        <i >
+Feedback to <a href="https://www.w3schools.com">Visit W3Schools</a></i>
+      </form>
+    </div>
+  </body>
+</html>
